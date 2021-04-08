@@ -30,11 +30,15 @@ ClassDoc >> getAnyClassDetails: aClassName [
 	doc :='Voici la documentation de la classe ', aClassName name asString, ' : '.	
 		
 	objClassDetails := ClassDetails new.	
+
 	lstClassSubClass := objClassDetails getAllSubclasses: aClassName.
 	lstClassSuperClass := objClassDetails getAllSuperClasses: aClassName.	
+
+	".... And here we go with all other methods"
 	
 	doc:= doc, '- Sub classes: '.		
-	doc:= doc, lstClassSubClass asString .
+	doc:= doc, lstClassSubClass asString . "here I need to iterate"
+	
 	doc:= doc, '- Super classes: '.		
 	doc:= doc, lstClassSuperClass asString .
 	
